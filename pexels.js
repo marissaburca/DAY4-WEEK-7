@@ -59,4 +59,15 @@ headers: {
 })
 }
 ))
-const pressToHide= document.getElementsByClassName
+
+
+const pressToHide= document.querySelectorAll('.card .btn:nth-of-type(2)')
+console.log(pressToHide)
+
+
+for(let i=0; i< pressToHide.length; i++){
+    pressToHide[i].innerText ='Hide'
+    pressToHide[i].addEventListener('click',()=>{
+        pressToHide[i].closest('.card').style.display= 'none'
+    })
+}
