@@ -28,8 +28,9 @@ const changhingCards = function(param){
       imgs.forEach((elem) => {
         for (let i = 0; i < imgs.length; i++) {
           imgs[i].src = database.photos[i].src.tiny;
-          imgs[i].addEventListener('click', ()=>{
-           window.location.href = 'details.html'
+          const evId = database.photos[i].id
+          imgs[i].addEventListener('click', ()=>{ 
+           window.location.href = 'details.html' + evId
           })
         }
       });
@@ -43,10 +44,9 @@ const changhingCards = function(param){
       titles.forEach((elem) => {
         for (let i = 0; i < titles.length; i++) {
           titles[i].innerText =database.photos[i].alt;
-        }
-        titles[i].addEventListener('click', ()=>{
-            window.location.href = 'details.html'
-           })
+          titles[i].addEventListener('click', ()=>{
+          window.location.href = 'details.html'
+      })}
       });
     })
     .catch((err) => {
